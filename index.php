@@ -26,7 +26,7 @@ function getToken(){
 
 require 'vendor/autoload.php';
 $f3 = \Base::instance();
-/*
+
 $f3->route('GET /',
 	function() {
 		echo 'Hello, world!';
@@ -37,7 +37,7 @@ $f3->route('GET /saludo/@nombre',
 		echo 'Hola '.$f3->get('PARAMS.nombre');
 	}
 );
-*/ 
+ 
 // Registro
 /*
  * Este Registro recibe un JSON con el siguiente formato
