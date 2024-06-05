@@ -1,9 +1,11 @@
 # Enable rewrite engine and route requests to framework
 RewriteEngine On
  
-# Some servers require you to specify the `RewriteBase` directive
-# In such cases, it should be the path (relative to the document root)
-# containing this .htaccess file
+# Bloquear acceso a archivos .json
+RewriteRule ^.*\.json$ - [R=404,NC]
+
+# Regla existente para bloquear acceso a ciertas rutas y archivos .ini
+RewriteRule ^(app|dict|ns|tmp)\/|\.ini$ - [R=404]
  
 RewriteRule ^(lib|tmp)\/|\.(ini|php)$ - [R=404]
  
