@@ -71,6 +71,7 @@ $f3->route('POST /Registro',
 		// TODO validar correo en json
 		// TODO Control de error de la $DB
 		try {
+			$hashedPassword = password_hash($jsB['password'], PASSWORD_DEFAULT);
 			$R = $db->exec('insert into Usuario values(null,"'.$jsB['uname'].'","'.$jsB['email'].'",md5("'.$jsB['password'].'"))');
 		} catch (Exception $e) {
 			echo '{"R":-2}';
